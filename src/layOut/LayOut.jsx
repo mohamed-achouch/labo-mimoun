@@ -7,7 +7,7 @@ const LayOut = () => {
   return (
     <div>
         <Header/>
-        <div>
+        <div className=' pt-[100px]'>
             <Routers/>
         </div>
         <Footer/>
