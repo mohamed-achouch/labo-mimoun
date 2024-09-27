@@ -70,7 +70,7 @@ const Header = () => {
       </header>
       {/* Mobile device */}
     {
-    <div className={` ${showMenu ? 'h-[650px] pt-8' : ' h-0 overflow-hidden pt-0'} duration-200 transition-all fixed h-full  top-[100px] bg-white z-40  left-0 w-full `}>
+    <div className={` ${showMenu ? 'h-[650px] pt-8' : 'h-0 overflow-hidden pt-0'}   duration-200 transition-all fixed   top-[100px] bg-white z-40  left-0 w-full `}>
       <ul className="  items-center justify-between gap-6 flex flex-col">
         <li className=' text-custom-primary font-semibold ml-5 text-[14px] hover:text-custom-third before:content-[""] relative before:absolute before:h-1 hover:before:w-full before:duration-200 before:transition-all before:w-0 before:bg-custom-third before: left-0 before:-bottom-2  duration-200 transition-all'>
           <a href="/">VOS QUESTION</a>
