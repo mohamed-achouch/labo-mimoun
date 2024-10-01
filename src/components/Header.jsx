@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
-import { CgSearch } from "react-icons/cg";
+// import { CgSearch } from "react-icons/cg";
 import { LuCalendarDays } from "react-icons/lu";
 import Button from "./Button/Button";
 import { TfiMenu } from "react-icons/tfi";
-import { FiBookOpen } from "react-icons/fi";
+// import { FiBookOpen } from "react-icons/fi";
 import { FaXmark } from "react-icons/fa6";
 
 const Header = () => {
-  const [showMenu , setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <div>
       <header className="shadow-md z-30  px-2 sm:px-4 md:px-10 lg:px-20 xl:px-32 flex items-center fixed left-0 w-full justify-between bg-white h-[100px]">
@@ -21,12 +21,34 @@ const Header = () => {
             />
           </a>
         </div>
-       {
-        !showMenu  ?  <TfiMenu onClick={ ()=> setShowMenu(true)} className=" lg:hidden cursor-pointer text-[20px] md:text-[25px] xl:text-[30px] text-custom-primary" /> :  <FaXmark onClick={ ()=> setShowMenu(false)} className=" lg:hidden cursor-pointer text-[20px] md:text-[25px] xl:text-[30px] text-custom-primary" />
-       } 
-       
+        <div className="sm:flex items-center gap-3 hidden ">
+          <Button
+            lien="/contact-us"
+            icon={<LuCalendarDays className=" text-[24px]" />}
+            title=" prendre rendez vous"
+            color="bg-custom-third"
+          />
+          <div className=" flex flex-col gap-1 items-center">
+            <span className=" text-[15px] font-bold">05 67 65 43 23</span>{" "}
+            <span className=" text-custom-secondary text-[14px]">
+              service client
+            </span>
+          </div>
+        </div>
 
-        <ul className="  items-center justify-between gap-10 hidden lg:flex">
+        {!showMenu ? (
+          <TfiMenu
+            onClick={() => setShowMenu(true)}
+            className=" sm:hidden cursor-pointer text-[20px] md:text-[25px] xl:text-[30px] text-custom-primary"
+          />
+        ) : (
+          <FaXmark
+            onClick={() => setShowMenu(false)}
+            className=" sm:hidden cursor-pointer text-[20px] md:text-[25px] xl:text-[30px] text-custom-primary"
+          />
+        )}
+
+        {/* <ul className="  items-center justify-between gap-10 hidden lg:flex">
           <li className=' text-custom-primary font-semibold ml-5 text-[14px] hover:text-custom-third before:content-[""] relative before:absolute before:h-1 hover:before:w-full before:duration-200 before:transition-all before:w-0 before:bg-custom-third before: left-0 before:-bottom-2  duration-200 transition-all'>
             <a href="/">VOS QUESTION</a>
           </li>
@@ -48,8 +70,8 @@ const Header = () => {
               service client
             </span>
           </li>
-        </ul>
-        <ul className=" absolute right-32 -bottom-[24px]  items-end gap-4  hidden lg:flex">     
+        </ul> */}
+        {/* <ul className=" absolute right-32 -bottom-[24px]  items-end gap-4  hidden lg:flex">     
           <li>   
             <Button            
               lien="/contact-us"
@@ -66,40 +88,50 @@ const Header = () => {
               color="bg-custom-primary"
             />
           </li>
-        </ul>
+        </ul> */}
       </header>
       {/* Mobile device */}
-    {
-    <div className={` ${showMenu ? 'h-[650px] pt-8' : 'h-0 overflow-hidden pt-0'}   duration-200 transition-all fixed   top-[100px] bg-white z-40  left-0 w-full `}>
-      <ul className="  items-center justify-between gap-6 flex flex-col">
-        <li className=' text-custom-primary font-semibold ml-5 text-[14px] hover:text-custom-third before:content-[""] relative before:absolute before:h-1 hover:before:w-full before:duration-200 before:transition-all before:w-0 before:bg-custom-third before: left-0 before:-bottom-2  duration-200 transition-all'>
-          <a href="/">VOS QUESTION</a>
-        </li>
-        <li className=' text-custom-primary font-semibold ml-5 text-[14px] hover:text-custom-third before:content-[""] relative before:absolute before:h-1 hover:before:w-full before:duration-200 before:transition-all before:w-0 before:bg-custom-third before: left-0 before:-bottom-2  duration-200 transition-all'>
-          <a href="/">BOUTIQUE EN LIGNE</a>
-        </li>
+      {
+        <div
+          className={` ${
+            showMenu ? "h-[700px] pt-8" : "h-0 overflow-hidden pt-0"
+          }   duration-200 transition-all fixed   top-[100px] bg-white z-40  left-0 w-full `}
+        >
+          <ul className="  items-center justify-between gap-6 flex flex-col">
+            {/* <li className=' text-custom-primary font-semibold ml-5 text-[14px] hover:text-custom-third before:content-[""] relative before:absolute before:h-1 hover:before:w-full before:duration-200 before:transition-all before:w-0 before:bg-custom-third before: left-0 before:-bottom-2  duration-200 transition-all'>
+              <a href="/">VOS QUESTION</a>
+            </li>
+            <li className=' text-custom-primary font-semibold ml-5 text-[14px] hover:text-custom-third before:content-[""] relative before:absolute before:h-1 hover:before:w-full before:duration-200 before:transition-all before:w-0 before:bg-custom-third before: left-0 before:-bottom-2  duration-200 transition-all'>
+              <a href="/">BOUTIQUE EN LIGNE</a>
+            </li> */}
 
-        <li onClick={ ()=> setShowMenu(false)}>
-          <Button
-            
-            lien="/contact-us"
-            icon={<LuCalendarDays className=" text-[24px]" />}
-            title=" prendre rendez vous"
-            color="bg-custom-third"
-          />
-        </li>
-        <li onClick={ ()=> setShowMenu(false)}>
-          <Button
-            
-            lien=""
-            icon={<FiBookOpen className=" text-[24px]" />}
-            title=" demende de brochure"
-            color="bg-custom-primary"
-          />
-        </li>
-      </ul>
-    </div>
-    }
+            <li onClick={() => setShowMenu(false)}>
+              <Button
+                lien="/contact-us"
+                icon={<LuCalendarDays className=" text-[24px]" />}
+                title=" prendre rendez vous"
+                color="bg-custom-third"
+              />
+            </li>
+            <li>
+            <div className=" flex flex-col gap-1 items-center">
+            <span className=" text-[15px] font-bold">05 67 65 43 23</span>{" "}
+            <span className=" text-custom-secondary text-[14px]">
+              service client
+            </span>
+          </div>
+            </li>
+            {/* <li onClick={() => setShowMenu(false)}>
+              <Button
+                lien=""
+                icon={<FiBookOpen className=" text-[24px]" />}
+                title=" demende de brochure"
+                color="bg-custom-primary"
+              />
+            </li> */}
+          </ul>
+        </div>
+      }
     </div>
   );
 };

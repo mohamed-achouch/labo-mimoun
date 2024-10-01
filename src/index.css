@@ -16,3 +16,22 @@ body{
     padding: 0;
     outline: none;
 }
+.slick-next{
+    right: -20px  !important;
+   
+}
+.slick-prev{
+    left: -20px !important;
+    z-index: 11;
+   
+}
+/* .content{
+    display: flex !important;
+     justify-content: space-between !important;
+} */
+
+/* .rh5v-DefaultPlayer_component{
+    height: 700px !important;
+    width:90% !important;
+    display: flex !important;
+} */

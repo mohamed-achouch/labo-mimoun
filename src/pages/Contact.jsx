@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect}   from "react";
 import { AiTwotoneMail } from "react-icons/ai";
 import { FiPhoneCall } from "react-icons/fi";
 import { ImLocation2 } from "react-icons/im";
 
 const Contact = () => {
+
+  useEffect(() => {  
+    window.scrollTo(0, 0);
+  }, []); 
   return (
     <div className=" px-2  sm:px-4 md:px-10 lg:px-20 xl:px-32">
       <div className="my-20 w-full flex items-center justify-between gap-8 md:gap-0 flex-col-reverse md:flex-row ">
